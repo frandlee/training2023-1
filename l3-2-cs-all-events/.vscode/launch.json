@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "name": "Deploy Cloud Function",
+      "type": "cloudcode.cloudfunctions",
+      "request": "launch",
+      "functionName": "l3-2-cs-all-events",
+      "region": "asia-northeast1",
+      "gen": "GEN_2",
+      "revision": "l3-2-cs-all-events-00001-mof",
+      "entryPoint": "cs-all-events",
+      "runtime": "nodejs18",
+      "testInput": ""
+    }
+  ]
+}

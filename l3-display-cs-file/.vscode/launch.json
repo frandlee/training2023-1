@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "name": "Deploy Cloud Function",
+      "type": "cloudcode.cloudfunctions",
+      "request": "launch",
+      "functionName": "L3-display-cs-file",
+      "region": "asia-northeast1",
+      "gen": "GEN_2",
+      "revision": "l3-display-cs-file-00015-sux",
+      "entryPoint": "L3-display-cs-file",
+      "runtime": "nodejs18",
+      "testInput": ""
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "name": "Deploy Cloud Function",
+      "type": "cloudcode.cloudfunctions",
+      "request": "launch",
+      "functionName": "L4-2-csv-to-BQ",
+      "region": "asia-northeast1",
+      "gen": "GEN_2",
+      "revision": "l4-2-csv-to-bq-00001-xab",
+      "entryPoint": "loadCsvIntoBQ",
+      "runtime": "nodejs18",
+      "testInput": ""
+    }
+  ]
+}

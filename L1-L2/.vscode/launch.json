@@ -7,7 +7,7 @@
       "functionName": "L1-L2",
       "region": "asia-northeast1",
       "gen": "GEN_2",
-      "revision": "l1-l2-00001-lit",
+      "revision": "l1-l2-00003-his",
       "entryPoint": "helloHttp",
       "runtime": "nodejs18",
       "testInput": ""

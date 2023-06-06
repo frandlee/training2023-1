@@ -4,11 +4,11 @@
       "name": "Deploy Cloud Function",
       "type": "cloudcode.cloudfunctions",
       "request": "launch",
-      "functionName": "L3-display-cs-file",
+      "functionName": "L3-2",
       "region": "asia-northeast1",
       "gen": "GEN_2",
-      "revision": "l3-display-cs-file-00001-cag",
-      "entryPoint": "L3-display-cs-file",
+      "revision": "l3-2-00002-fig",
+      "entryPoint": "helloPubSub",
       "runtime": "nodejs18",
       "testInput": ""
     }

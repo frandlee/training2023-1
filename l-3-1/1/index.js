@@ -1,7 +1,7 @@
 const functions = require('@google-cloud/functions-framework');
 
-// Register a CloudEvent callback with the Functions Framework that will
-// be triggered by Cloud Storage.
+// 此行使用 Functions Framework 注册了一个名为 helloGCS 的 CloudEvent 回调函数。
+// 当有文件上传到Cloud Storage时，将执行此函数。
 functions.cloudEvent('helloGCS', cloudEvent => {
   console.log(`Event ID: ${cloudEvent.id}`);
   console.log(`Event Type: ${cloudEvent.type}`);

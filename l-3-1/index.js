@@ -1,8 +1,8 @@
 const functions = require('@google-cloud/functions-framework');
 const { Storage } = require('@google-cloud/storage'); //导入Storage类
 
-// 此行使用 Functions Framework 注册了一个名为 helloPubSub 的 CloudEvent 回调函数。
-// 当 Pub/Sub 触发器主题接收到消息时，将执行此函数。
+// 此行使用 Functions Framework 注册了一个名为 helloGCS 的 CloudEvent 回调函数。
+// 当有文件上传到Cloud Storage时，将执行此函数。
 functions.cloudEvent('helloGCS', async (cloudEvent) => {
 	console.log(`Event ID: ${cloudEvent.id}`);
 	console.log(`Event Type: ${cloudEvent.type}`);

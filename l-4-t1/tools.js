@@ -2,7 +2,7 @@ const { BigQuery } = require('@google-cloud/bigquery'); //导入 BigQuery 类
 const { Storage } = require('@google-cloud/storage'); //导入Storage类
 
 module.exports = {
-	getTableId, getFileFormat, loadFileFromGCS: loadFileFromGCSToBQ, loadCSVFromGCS, loadJsonFromGCS
+	loadFileFromGCSToBQ
 };
 
 function getTableId(fileName) {
@@ -56,9 +56,6 @@ async function loadFileFromGCSToBQ(bucket, fileName) {
 	if (fileFormat === "csv") {
 	  await loadCSVFromGCS(bucket, fileName, datasetId, tableId, location);
 	  return;
-	} else if (fileFormat === "json") {
-	  await loadJsonFromGCS(bucket, fileName, datasetId, tableId, location);
-	  return;
 	} else {
 	  console.error(`Bypassed! ${fileExtension} is not supported. File should be in csv or json format. \nFileName:${fileName}`);
 	  return;
@@ -73,33 +70,6 @@ async function loadCSVFromGCS(bucket, fileName, datasetId, tableId, location) {
 	const metadata = {
 	  sourceFormat: 'CSV',
 	  skipLeadingRows: 1,
-	  location: location,
-	  wirteDisposition: "WRITE_APPEND"
-	};
-  
-	// Load data from a Google Cloud Storage file into the table
-	const [job] = await bigquery
-	  .dataset(datasetId)
-	  .table(tableId)
-	  .load(storage.bucket(bucket).file(fileName), metadata);
-  
-	// load() waits for the job to finish
-	console.log(`Job ${job.id} completed.`);
-  
-	// Check the job's status for errors
-	const errors = job.status.errors;
-	if (errors && errors.length > 0) {
-	  throw errors;
-	}
-}
-
-async function loadJsonFromGCS(bucket, fileName, datasetId, tableId, location) {
-	// Instantiate clients
-	const bigquery = new BigQuery();
-	const storage = new Storage();
-  
-	const metadata = {
-	  sourceFormat: "NEWLINE_DELIMITED_JSON",
 	  location: location,
 	  wirteDisposition: "WRITE_APPEND"
 	};

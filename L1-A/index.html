@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript用例</title>
+  <script>
+    function greet() {
+      var name = document.getElementById("name").value;
+      var message = "您好, " + name + "桑!";
+      document.getElementById("output").innerHTML = message;
+    }
+  </script>
+</head>
+<body>
+  <h1>打招呼App</h1>
+  <label for="name">您贵姓？</label>
+  <input type="text" id="name">
+  <button onclick="greet()">认识一下</button>
+  <p id="output"></p>
+</body>
+</html>

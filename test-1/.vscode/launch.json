@@ -4,11 +4,11 @@
       "name": "Deploy Cloud Function",
       "type": "cloudcode.cloudfunctions",
       "request": "launch",
-      "functionName": "L1-T1",
+      "functionName": "test",
       "region": "asia-northeast1",
       "gen": "GEN_2",
-      "revision": "l1-t1-00003-jot",
-      "entryPoint": "helloHttp",
+      "revision": "test-00001-gaw",
+      "entryPoint": "helloGCS",
       "runtime": "nodejs18",
       "testInput": ""
     }
